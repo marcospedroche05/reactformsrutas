@@ -29,8 +29,8 @@ export default class TablaMultiplicarv2 extends Component {
   state = {
     tablaVisible: false,
     numeros: [],
-    numerosRandom: this.generarAleatorios(),
   };
+  numerosRandom = this.generarAleatorios();
   render() {
     return (
       <div>
@@ -38,7 +38,7 @@ export default class TablaMultiplicarv2 extends Component {
         <form onSubmit={this.generarNumeros}>
           <label>Introduce un número: </label>
           <select ref={this.selectNumeros}>
-            {this.state.numerosRandom.map((numero, index) => {
+            {this.numerosRandom.map((numero, index) => {
               return (
                 <option value={numero} key={index}>
                   {numero}
